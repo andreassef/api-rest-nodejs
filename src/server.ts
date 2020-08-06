@@ -1,7 +1,9 @@
 import express, { response } from 'express';
 import routes from './routes';
+import cors from 'cors';
 
 const app = express();
+app.use(cors()); // O pacote cors permitira que aplicações em outros endereços possa acessa nossa API
 app.use(express.json());
 app.use(routes);
 
